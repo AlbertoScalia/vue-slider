@@ -35,7 +35,14 @@ createApp({
             } else {
                 this.slideCorrente = this.slides.length - 1;
             }
-        }
+        },
+        slideSuccessiva() {
+            if(this.slideCorrente < this.slides.length - 1) {
+                this.slideCorrente++;
+            } else {
+                this.slideCorrente = 0;
+            }
+        },
     }
 
 }).mount('#app')
