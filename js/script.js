@@ -43,6 +43,9 @@ createApp({
                 this.slideCorrente = 0;
             }
         },
+        cambiaSlide(i) {
+            this.slideCorrente = i;
+        }
     }
 
 }).mount('#app')
