@@ -45,7 +45,23 @@ createApp({
         },
         cambiaSlide(i) {
             this.slideCorrente = i;
+        },
+        getSlideClass(i) {
+            return (i == this.slideCorrente) ? "thumb active" : "thumb";
+        },
+        fermaAutoplay() {
+            clearInterval( this.autoScroll );
+            this.autoScroll = null;
+        },
+        avvioAutoplay() {
+            this.autoScroll = setInterval(()=>{
+            this.slideSuccessiva();
+            }, 1000);
         }
-    }
+    },
+    mounted() {
+        console.log("App montata", this.slides);
 
+        this.avvioAutoplay();
+    }
 }).mount('#app')
